@@ -1,1 +1,4 @@
-
+button {
+  background-color: var(--teal);
+  border: 1px solid var(--green);
+}

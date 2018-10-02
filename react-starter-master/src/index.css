@@ -1,3 +1,21 @@
+:root {
+  --pink: #CC0099;
+  --purple: #a14ebf;
+  --blue: #6c91bf;
+  --teal: #5fb0b7;
+  --green: #5bc8af;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  color: var(--blue);
+}
+
+h1 {
+  color: var(--purple);
+  font-family: 'Crete Round', serif;
+  font-size: 48px;
 }
