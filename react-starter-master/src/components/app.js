@@ -1,11 +1,12 @@
 import React from "react"
+import SingleJob from "./SingleJobPage"
 
 class App extends React.Component {
 
   render() {
     return (
       <div>
-        Find me in src/app.js!
+        <SingleJob />
       </div>
     )
   }
