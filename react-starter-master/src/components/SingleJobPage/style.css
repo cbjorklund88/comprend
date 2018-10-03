@@ -1,10 +1,64 @@
 button {
   background-color: var(--teal);
   border: 1px solid var(--green);
+  width: 110px;
+  padding: 5px 0;
+}
+
+img {
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.single-job-description-container {
+  margin-bottom: 20px;
 }
 
 .single-job-container{
   margin: auto;
   width: 700px;
   background-color: lightpink;
+}
+
+.single-job-description-container {
+  display: flex;
+}
+
+.single-job-description-container-image,
+.single-job-description-container-text {
+  width: 50%;
+}
+
+.single-job-description-container-text {
+  margin-left: 20px;
+}
+
+.single-job-button-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.single-job-button-container button {
+  margin: 10px 20px;
+}
+
+.single-job-image-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+}
+
+.single-job-image-container-portrait {
+  width: 30%;
+  height: auto;
+}
+
+.single-job-image-container-portrait img {
+  border-radius: 50%;
 }
