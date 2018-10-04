@@ -17,6 +17,7 @@ class SingleJob extends React.Component {
     const url = "http://hellotechnigo.comprendwebsites.net/api/jobs/47238"
 
     fetch(url)
+      .then(response => {
         return response.json()
       }).then(result => {
         this.setState({
