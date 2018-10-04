@@ -4,62 +4,66 @@ import "./style.css"
 class SingleJob extends React.Component {
 
   state = {
-  title: "Front-End Developer to our Web-Application Team!"
-  // body: ""
+    singleJob: {}
   }
 
+  // checkForQuotes = () => {
+  //   if (!this.state.singleJob.quote) {
+  //
+  //   }
+  // }
+  componentDidMount() {
+
+    const url = "http://hellotechnigo.comprendwebsites.net/api/jobs/47238"
+
+    fetch(url)
+        return response.json()
+      }).then(result => {
+        this.setState({
+          singleJob: result
+        })
+        console.log(this.state.singleJob)
+        // checkForQuotes()
+      })
+
+  }
   render() {
-    // let jobObject = {}
-    //
-    // const url = "http://hellotechnigo.comprendwebsites.net/api/jobs/118066"
-    // const req = new Request(url)
-    //
-    // fetch(req)
-    //   .then(function(response) {
-    //     return response.json()
-    //   }) .then(function(result) {
-    //     console.log(result)
-    //     createJob(result)
-    //   })
-    //   console.log(jobObject)
-    //
-    //   const createJob = (job) => {
-    //     console.log(job)
-    //     jobObject = job
-    //   }
+
+    const {
+      title,
+      intro,
+      quote,
+      workday,
+      aboutYou,
+      match,
+      city
+    } = this.state.singleJob
 
     return (
       <div className="wrapper">
         <div className="single-job-container">
           <a href="#">&#8592; Back to List</a>
-          <h1>{this.state.title}</h1>
-          <p className="preamble">Are you passionate about client side performance and optimization, while curious to learn and develop your skills? Awesome – we are looking for a Front-End Developer who wants to create websites in Comprend’s internally developed, service based, application labelled “Website as a Service” together with our Web-Application team!</p>
+          <h1>{title}</h1>
+          <p className="preamble"><span>{city}. </span>{intro}</p>
           <img src="./assets/images/job-image.webp" alt="" />
           <div className="single-job-button-container">
             <button className="button-apply">Apply for the job</button>
             <button className="button-share">Share the job</button>
           </div>
-          <h2>Your workday!</h2>
-          <p>As a Front-End Developer at Comprend you will have a significant influence on Comprends clients&apos; visual appearance and build websites that, with focus on accessibility and user experience, will be used by thousands of customers. You will be a part of a small, start-up like, team within a large web agency with well-known clients – with the mission to deliver the best website to our clients!</p>
-          <blockquote>As for Front-End technologies we use JavaScript, CSS3, HTML5 and LESS.
-          You will work in our agile web team, closely with our UX designers and Back-End Developers and together create solutions, that pushes the visual limits.
-          </blockquote>
+          <h2>Your workday</h2>
+          <p>{workday}</p>
+          {quote && <blockquote>{quote}</blockquote>}
           <div className="single-job-description-container">
             <div className="single-job-description-container-image">
               <img src="./assets/images/job-image.webp" alt="" />
             </div>
             <div className="single-job-description-container-text">
               <h2>Who are you?</h2>
-              <p>We believe you’re savvy when it comes to Front-End web technologies such as JavaScript, CSS and HTML. You have a passion for User Experience, graphic design, accessibility and client-side performance and optimization. So, if you also have experience with User Interface that’s great, but it’s not a must.
-            Most of all, we believe that you have an eye for details, are curious and open minded, want to learn and develop while also being humble, self-going and responsible.
-              </p>
+              <p>{aboutYou}</p>
             </div>
           </div>
           <h2>Is Comprend the company for you?</h2>
-          <p>Comprend is a full-service agency with a mission to help our clients to communicate better in the digital landscape. With an agile approach, we create innovative and consumer centric world class digital experiences using design thinking, helping our clients grow their business and succeed in digital transformation. We combine communication knowledge with digital expertise. Comprend is a proud home for 90+ multi-talented professionals, with offices in Stockholm and London.
-        Health, happiness and work-life balance is important at Comprend, we offer free medical care and organise functional group training/running coaching, yoga as well as other activities. We have massage in our office twice a week and offer subsidy for gym membership or other training. We continuously work on our company culture and do weekly follow ups on wellness and happiness.
-        Comprend also offers great possibilities for flexible working; from home, a coffee shop or why not from our office in London.
-          </p>
+          <p>{match}</p>
 
           <h2>#comprendlife</h2>
           <p>The things we do are exciting and meaningful – our work makes a difference to our clients and we are committed to contributing to success.
