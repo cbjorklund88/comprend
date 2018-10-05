@@ -1,14 +1,60 @@
 .button-department {
-  background-color: var(--green);
+  background-color: var(--blue);
   width: 150px;
+  margin-right: 40px;
 }
-
 .button-city {
   background-color: var(--blue);
   width: 150px;
 }
-
+.job-listing-container {
+  width: 100%;
+}
+.job-listing-info-container {
+  width: 43%;
+}
 .job-listing-button-container button {
-  margin: 10px 20px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: none;
+}
+.job-listing-button-container i {
+  position: absolute;
+  right: 10px;
+  top: 7.5px;
+  width: 20px;
+  font-size: 20px;
+}
+.job-listing-table-container {
+  width: 100%;
+}
+.job-listing-table {
+  margin-top: 20px;
+  width: 100%;
+  border: 2px solid var(--green);
+}
+.job-listing-table tr {
+  padding: 10px;
+  /* background-color: var(--green); */
+}
+.job-listing-table tr:nth-child(2n) {
+  background-color: hsl(166, 50%, 93%);
+}
+.job-listing-table td:first-child {
+  width: 60%;
+}
+.job-listing-table th {
+  text-align: left;
+  padding: 30px 30px 40px;
+  border-bottom: 2px solid var(--green);
+  font-weight: 700;
+  background-color: hsl(166, 50%, 57%);
+  color: hsl(166, 50%, 95%);
+  letter-spacing: 1.5px;
+}
+.job-listing-table td {
+  width: 20%;
+  padding: 20px 30px 30px;
+  border-bottom: 2px solid var(--green);
 }
