@@ -49,6 +49,7 @@ h2 {
 
 .single-job-button-container button {
   margin: 10px 20px;
+  border-radius: 5px;
 }
 
 .single-job-image-container {

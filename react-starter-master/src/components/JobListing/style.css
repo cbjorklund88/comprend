@@ -1,0 +1,14 @@
+.button-department {
+  background-color: var(--green);
+  width: 150px;
+}
+
+.button-city {
+  background-color: var(--blue);
+  width: 150px;
+}
+
+.job-listing-button-container button {
+  margin: 10px 20px;
+  border-radius: none;
+}
