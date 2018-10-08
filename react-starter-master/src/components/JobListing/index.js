@@ -39,10 +39,20 @@ class JobListing extends React.Component {
       })
     }
   }
-  filterDepartment() {
-    console.log('filterdep')
-
+  filterDepartment = (e) => {
+    if (e.target.value == "all") {
+      this.setState({
+        filteredJobs: this.state.jobs
+      })
+    } else {
+      this.setState({
+        filteredJobs: this.state.jobs.filter(job => {
+          return job.department == e.target.value
+        })
+      })
+    }
   }
+
 
   render() {
     return (
@@ -56,17 +66,25 @@ class JobListing extends React.Component {
               research – all with a passion for digital communication. If you’re
               curious, creative and passionate about digital communication, apply now.
             </p>
-            <div className="job-listing-button-container">
-              <button className="button-department" onClick={this.filterDepartment}>
-                Department<i className="fas fa-angle-down" />
-              </button>
-              <select className="select-city" onChange={this.filterCity}>
-                <option disabled selected>City</option>
-                <option value="all">All</option>
-                <option value="Stockholm">Stockholm</option>
-                <option value="London">London</option>
-              </select>
-              <i className="fas fa-angle-down" />
+            <div className="job-listing-selector-container">
+              <div className="icon-wrapper">
+                <select className="select-department" onChange={this.filterDepartment}>
+                  <option disabled selected>Department</option>
+                  <option value="all">All</option>
+                  <option value="3502">Technology</option>
+                  <option value="3503">Creative</option>
+                </select>
+                <i className="fas fa-angle-down" />
+              </div>
+              <div className="icon-wrapper">
+                <select className="select-city" onChange={this.filterCity}>
+                  <option disabled selected>City</option>
+                  <option value="all">All</option>
+                  <option value="Stockholm">Stockholm</option>
+                  <option value="London">London</option>
+                </select>
+                <i className="fas fa-angle-down" />
+              </div>
             </div>
           </div>
           <div className="job-listing-table-container">
