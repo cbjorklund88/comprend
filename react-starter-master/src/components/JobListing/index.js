@@ -27,11 +27,17 @@ class JobListing extends React.Component {
   }
 
   filterCity = (e) => {
-    this.setState({
-      filteredJobs: this.state.jobs.filter(job => {
-        return job.city == e.target.value
+    if (e.target.value == "all") {
+      this.setState({
+        filteredJobs: this.state.jobs
       })
-    })
+    } else {
+      this.setState({
+        filteredJobs: this.state.jobs.filter(job => {
+          return job.city == e.target.value
+        })
+      })
+    }
   }
   filterDepartment() {
     console.log('filterdep')
