@@ -1,0 +1,17 @@
+.employee-inner-container {
+  padding: 20px;
+}
+.employee-portrait {
+  width: 100%;
+  height: auto;
+}
+.employee-portrait img {
+  border-radius: 50%;
+}
+.employee-info p {
+  text-align: center;
+  margin-bottom: 0;
+}
+.employee-info p:first-child {
+  font-weight: 700;
+}
