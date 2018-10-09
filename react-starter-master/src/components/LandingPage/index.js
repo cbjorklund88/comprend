@@ -17,7 +17,7 @@ class LandingPage extends React.Component {
       .then(result => {
         this.setState({
           jobs: result,
-          filteredJobs: result
+          filteredJobs: result.slice(0, 3)
         })
         console.log(this.state.jobs)
         console.log(this.state.filteredJobs)
@@ -35,18 +35,16 @@ class LandingPage extends React.Component {
           </div>
         </div>
         <div className="job-suggestions-container">
-          <div className="job-suggestion">
-            <h3>Heading</h3>
-            <p>Description</p>
-          </div>
-          <div className="job-suggestion">
-            <h3>Heading</h3>
-            <p>Description</p>
-          </div>
-          <div className="job-suggestion">
-            <h3>Heading</h3>
-            <p>Description</p>
-          </div>
+          <h2>We are always looking for great people</h2>
+          {this.state.filteredJobs.map(job => (
+            <div className="job-suggestion">
+              <div className="job-suggestion-image">
+                <img src="./assets/images/job-image.webp" alt="job" />
+              </div>
+              <h3>{job.title}</h3>
+              <p>{job.city}</p>
+            </div>
+          ))}
         </div>
         <div className="job-openings-container">
           <img src="./assets/images/comprend-hero-1920x800.jpg" alt="comprend" />

@@ -9,13 +9,48 @@
 }
 
 .job-suggestions-container {
-  background-color: pink;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 60px auto;
   width: 1000px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.job-suggestion {
+  width: 30%;
+}
+
+.job-suggestion-image {
+
+}
+
+.job-suggestions-container h2 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.job-suggestions-container h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.job-suggestions-container p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.job-openings-container {
+  position: relative;
+}
+
+.job-openings-info {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .button-job-openings {
-  background-color: var(--blue)
+  background-color: var(--blue);
 }
