@@ -13,17 +13,16 @@ class JobListing extends React.Component {
 
     fetch(url)
       .then(response => {
-        return response.json();
+        return response.json()
       })
       .then(result => {
         this.setState({
           jobs: result,
           filteredJobs: result
-        });
-        console.log(this.state.jobs);
+        })
+        console.log(this.state.jobs)
         console.log(this.state.filteredJobs)
-        // checkForQuotes()
-      });
+      })
   }
 
   filterCity = (e) => {
