@@ -8,9 +8,14 @@
   top: 100px;
 }
 
-.section-container {
+.job-suggestions-container {
   background-color: pink;
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+.button-job-openings {
+  background-color: var(--blue)
 }
