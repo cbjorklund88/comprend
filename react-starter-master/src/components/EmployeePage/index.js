@@ -15,9 +15,18 @@ class EmployeePage extends React.Component {
     fetch(url)
       .then(response => {
         return response.json()
-      }).then(result => {
+      }).then(employees => {
+        const placeholder = "/assets/images/placeholder.png"
+        const removeInvalidNames = employee => (!(employee.name === "" || employee.name === null || employee.name.includes("@")))
+        employees.forEach(employee => {
+          if (employee.pictureUrl === "") {
+            employee.pictureUrl = placeholder
+          }
+        })
+        employees = employees
+          .filter(removeInvalidNames)
         this.setState({
-          employees: result
+          employees
         })
       })
   }
@@ -27,16 +36,6 @@ class EmployeePage extends React.Component {
      })
    }
    render() {
-    const placeholder = "/assets/images/placeholder.png"
-      this.state.employees.forEach(item => {
-      if (item.pictureUrl === "") {
-          item.pictureUrl = placeholder
-      }
-        if (item.name === "" || item.name === null || item.name.includes("@")) {
-        const itemIndex = this.state.employees.indexOf(item)
-        this.state.employees.splice(itemIndex, 1)
-      }
-    })
 
     return (
       <div className="wrapper">

@@ -17,9 +17,9 @@ class SingleJob extends React.Component {
     fetch(jobUrl)
       .then(response => {
         return response.json()
-      }).then(result => {
+      }).then(jobs => {
         this.setState({
-          singleJob: result
+          singleJob: jobs
         })
       })
 
