@@ -1,11 +1,19 @@
 .hero-container {
   position: relative;
 }
+.hero-container img {
+  object-fit: cover;
+  object-position: bottom;
+  height: 400px;
+}
+.hero-container h1 {
+  font-size: 70px;
+}
 
 .hero-info-container {
   position: absolute;
-  left: 100px;
-  top: 100px;
+  left: 390px;
+  top: 120px;
 }
 
 .job-suggestions-container {
