@@ -1,0 +1,32 @@
+.header-container {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+}
+
+.header-container a {
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.header-container-left {
+  height: 50px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header-container-left img {
+  width: 200px;
+}
+
+.header-container-right {
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
