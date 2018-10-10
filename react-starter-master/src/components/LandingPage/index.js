@@ -8,9 +8,11 @@ class LandingPage extends React.Component {
   }
 
   componentDidMount() {
-    const url = "http://hellotechnigo.comprendwebsites.net/api/jobs"
 
-    fetch(url)
+    // Get Jobs from jobs-API
+    const JobsUrl = "http://hellotechnigo.comprendwebsites.net/api/jobs"
+
+    fetch(JobsUrl)
       .then(response => {
         return response.json()
       })
@@ -22,13 +24,18 @@ class LandingPage extends React.Component {
         console.log(this.state.jobs)
         console.log(this.state.filteredJobs)
       })
-  }
 
+
+      // Get Emplyees from employee-API
+      const employeeUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
+      // Fetch code for EMPLOYEES
+
+    }
   render() {
     return (
       <div className="wrapper">
         <div className="hero-container">
-          <img src="./assets/images/comprend-hero2.webp" alt="comprend" />
+          <img src="./assets/images/hero-office-image.jpg" alt="comprend" />
           <div className="hero-info-container">
             <h1>Join us</h1>
             <p>lkjdlfkjlskdjf</p>
