@@ -59,7 +59,8 @@
   transform: translate(-50%, -50%);
 }
 
-.button-job-openings {
+.button-job-openings,
+.button-coworkers {
   background-color: var(--purple);
 }
 
@@ -67,7 +68,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: auto;
+  margin-top: 20px;
   width: 1000px;
 }
 
