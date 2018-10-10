@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./style.css"
 import EmployeeComponent from "../EmployeeComponent"
 
@@ -13,7 +14,6 @@ class SingleJob extends React.Component {
   componentDidMount() {
     const pathUrl = this.props.match.params.id
     const jobUrl = `http://hellotechnigo.comprendwebsites.net/api/jobs/${pathUrl}`
-    console.log(this.props.match.params.id)
     fetch(jobUrl)
       .then(response => response.json())
       .then(jobs => {
@@ -42,7 +42,7 @@ class SingleJob extends React.Component {
 
         let randomStartIndex = Math.floor(Math.random() * (employees.length - 3))
         if (randomStartIndex < 0) {
-            randomStartIndex = 0
+          randomStartIndex = 0
         }
         employees = employees.slice(randomStartIndex, randomStartIndex + 3)
 
@@ -50,7 +50,6 @@ class SingleJob extends React.Component {
           employees,
           randomEmployeeIndex: Math.floor(Math.random() * (employees.length - 3))
         })
-        console.log(this.state.randomEmployeeIndex)
       })
   }
 
@@ -65,20 +64,11 @@ class SingleJob extends React.Component {
       city,
       id
     } = this.state.singleJob
-
-    const jobImages = [
-      "./assets/images/job1.jpg",
-      "./assets/images/job2.jpg",
-      "./assets/images/job3.jpg",
-      "./assets/images/job4.jpg",
-      "./assets/images/job5.jpg",
-      "./assets/images/job6.jpg"
-    ]
-    console.log(jobImages)
+    
     return (
       <div className="wrapper">
         <div className="single-job-container">
-          <a href="#">&#8592; Back to List</a>
+          <Link to="/jobs">&#8592; Back to List</Link>
           <h1>{title}</h1>
           <p className="preamble"><span>{city}. </span>{intro}</p>
           <img src={`/assets/images/${id}.jpg`} alt="" />

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./style.css"
 
 class LandingPage extends React.Component {
@@ -23,8 +24,6 @@ class LandingPage extends React.Component {
           jobs: result,
           filteredJobs: result.slice(0, 3)
         })
-        console.log(this.state.jobs)
-        console.log(this.state.filteredJobs)
       })
 
       // Get Emplyees from employee-API
@@ -39,28 +38,25 @@ class LandingPage extends React.Component {
           employees: result,
           filteredEmployees: result.slice(0, 5)
         })
-        console.log(this.state.employees)
-        console.log(this.state.filteredEmployees)
       })
   }
   render() {
     const jobImages = [
-      "./assets/images/job1.jpg",
-      "./assets/images/job2.jpg",
-      "./assets/images/job3.jpg",
-      "./assets/images/job4.jpg",
-      "./assets/images/job5.jpg",
-      "./assets/images/job6.jpg"
+      "/assets/images/118710.jpg",
+      "/assets/images/118066.jpg",
+      "/assets/images/66941.jpg",
+      "/assets/images/47466.jpg",
+      "/assets/images/47238.jpg",
+      "/assets/images/7814.jpg"
     ]
-
     return (
       <div className="wrapper">
         <div className="hero-container">
           <img src="./assets/images/hero-office-image.jpg" alt="comprend" />
           <div className="hero-info-container">
             <h1>Join us</h1>
-            <p>We are Comprend. If you’re curious, creative and
-            passionate about digital communication – get in
+            <p>We are Comprend. If you’re curious, creative and<br />
+            passionate about digital communication – get in <br />
             touch to explore our world!</p>
           </div>
         </div>
@@ -70,9 +66,13 @@ class LandingPage extends React.Component {
             <div className="job-suggestion">
               <p>{job.city}</p>
               <div className="job-suggestion-image">
-                <img src={jobImages[index]} alt="job" />
+                <Link to={`/jobs/${job.id}`}>
+                  <img src={jobImages[index]} alt="job" />
+                </Link>
               </div>
-              <h3>{job.title}</h3>
+              <Link to={`/jobs/${job.id}`}>
+                <h3>{job.title}</h3>
+              </Link>
             </div>
           ))}
           <div className="comprend-pitch-container">
@@ -93,7 +93,9 @@ class LandingPage extends React.Component {
           <div className="job-openings-info">
             <div className="transparent-background-container" />
             <h2>We are looking for you</h2>
-            <button className="button-job-openings">Job openings</button>
+            <Link to="/jobs">
+              <button className="button-job-openings">Job openings</button>
+            </Link>
           </div>
         </div>
         <div className="landing-page-image-container">
@@ -105,7 +107,9 @@ class LandingPage extends React.Component {
             </div>
           ))}
         </div>
-        <button className="button-coworkers">More coworkers</button>
+        <Link to="/employees">
+          <button className="button-coworkers">More coworkers</button>
+        </Link>
       </div>
     )
   }

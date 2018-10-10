@@ -6,10 +6,10 @@ class JobListing extends React.Component {
   state = {
     jobs: [],
     filteredJobs: []
-  };
+  }
 
   componentDidMount() {
-    const url = "http://hellotechnigo.comprendwebsites.net/api/jobs";
+    const url = "http://hellotechnigo.comprendwebsites.net/api/jobs"
 
     fetch(url)
       .then(response => {
@@ -51,7 +51,6 @@ class JobListing extends React.Component {
       })
     }
   }
-
 
   render() {
     return (
