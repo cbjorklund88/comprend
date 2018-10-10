@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import SingleJobPage from "./SingleJobPage"
 import JobListing from "./JobListing"
 import LandingPage from "./LandingPage"
@@ -10,13 +11,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <LandingPage />
-        {/* <EmployeePage /> */}
-        {/* <JobListing /> */}
-        <Footer />
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/jobs" component={JobListing} />
+            <Route exact path="/jobs/:id" component={SingleJobPage} />
+            <Route exact path="/employees" component={EmployeePage} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     )
   }
 
