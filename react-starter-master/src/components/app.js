@@ -12,14 +12,14 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-      <div>
-        <Header />
-        <LandingPage />
-        {/* <EmployeePage /> */}
-        {/* <JobListing /> */}
-        <Footer />
-      </div>
-      </router>
+        <div>
+          <Header />
+          <LandingPage />
+          {/* <EmployeePage /> */}
+          {/* <JobListing /> */}
+          <Footer />
+        </div>
+      </Router>
     )
   }
 
