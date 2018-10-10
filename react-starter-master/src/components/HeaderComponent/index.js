@@ -19,7 +19,6 @@ class Header extends React.Component {
             <a href="#">Webranking</a>
             <a href="#">Join us</a>
             <a href="#">Contact</a>
-
           </div>
         </div>
       </div>

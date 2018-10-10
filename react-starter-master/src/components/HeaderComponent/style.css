@@ -1,12 +1,17 @@
+i {
+  margin-left: 5px;
+}
+
 .header-container {
   background-color: #eee;
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 70px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
-.header-container a {
+.header-container-right a {
   color: inherit;
   display: flex;
   align-items: center;
@@ -16,7 +21,6 @@
   height: 50px;
   padding-left: 50px;
   display: flex;
-  align-items: center;
 }
 
 .header-container-left img {
