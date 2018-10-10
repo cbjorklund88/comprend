@@ -68,7 +68,8 @@ class LandingPage extends React.Component {
         </div>
 
         <div className="job-openings-container">
-          <img src="./assets/images/comprend-hero-1920x800.jpg" alt="comprend" />
+          <div className="transparent-background-container" />
+          <img src="./assets/images/office-fistbump.jpg" alt="comprend" />
           <div className="job-openings-info">
             <h2>We are looking for you</h2>
             <button className="button-job-openings">Job openings</button>

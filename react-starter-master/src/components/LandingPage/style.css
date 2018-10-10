@@ -56,6 +56,11 @@
 .job-openings-container {
   position: relative;
 }
+.job-openings-container img {
+  object-fit: cover;
+  object-position: center;
+  height: 400px;
+}
 
 .job-openings-info {
   text-align: center;
@@ -63,6 +68,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: #FFF;
+  padding: 40px;
 }
 
 .button-job-openings {
