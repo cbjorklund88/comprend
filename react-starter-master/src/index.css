@@ -87,3 +87,9 @@ blockquote::before {
   line-height: 1.5;
   letter-spacing: 0.2px;
 }
+
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 90%;
+  }
+}
