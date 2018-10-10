@@ -52,5 +52,20 @@
 }
 
 .button-job-openings {
-  background-color: var(--blue);
+  background-color: var(--purple);
+}
+
+.landing-page-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 1000px;
+}
+
+.landing-page-image-container-portrait {
+}
+
+.landing-page-image-container-portrait img {
+  border-radius: 50%;
 }

@@ -53,6 +53,23 @@ class LandingPage extends React.Component {
             <button className="button-job-openings">Job openings</button>
           </div>
         </div>
+        <div className="landing-page-image-container">
+          <div className="landing-page-image-container-portrait">
+            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          </div>
+          <div className="single-job-image-container-portrait">
+            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          </div>
+          <div className="single-job-image-container-portrait">
+            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          </div>
+          <div className="landing-page-image-container-portrait">
+            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          </div>
+          <div className="single-job-image-container-portrait">
+            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          </div>
+        </div>
       </div>
     )
   }
