@@ -45,6 +45,14 @@
   margin-bottom: 2px;
 }
 
+.job-suggestion {
+  width: 30%;
+}
+
+.job-suggestion-image img {
+  width: 100%;
+}
+
 .comprend-pitch-container {
   margin-top: 40px;
 }

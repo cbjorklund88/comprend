@@ -45,12 +45,12 @@ class LandingPage extends React.Component {
   }
   render() {
     const jobImages = [
-      <img src="./assets/images/job1.jpg" alt="office" />,
-      <img src="./assets/images/job2.jpg" alt="office" />,
-      <img src="./assets/images/job3.jpg" alt="office" />,
-      <img src="./assets/images/job4.jpg" alt="office" />,
-      <img src="./assets/images/job5.jpg" alt="office" />,
-      <img src="./assets/images/job6.jpg" alt="office" />
+      "./assets/images/job1.jpg",
+      "./assets/images/job2.jpg",
+      "./assets/images/job3.jpg",
+      "./assets/images/job4.jpg",
+      "./assets/images/job5.jpg",
+      "./assets/images/job6.jpg"
     ]
 
     return (
@@ -66,11 +66,11 @@ class LandingPage extends React.Component {
         </div>
         <div className="job-suggestions-container">
           <h2>We are always looking for great people</h2>
-          {this.state.filteredJobs.map(job => (
+          {this.state.filteredJobs.map((job, index) => (
             <div className="job-suggestion">
               <p>{job.city}</p>
               <div className="job-suggestion-image">
-                <img src="./assets/images/job-image.webp" alt="job" />
+                <img src={jobImages[index]} alt="job" />
               </div>
               <h3>{job.title}</h3>
             </div>
