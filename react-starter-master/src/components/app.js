@@ -2,6 +2,7 @@ import React from "react"
 import SingleJob from "./SingleJobPage"
 import JobListing from "./JobListing"
 import LandingPage from "./LandingPage"
+import EmployeePage from "./EmployeePage"
 
 class App extends React.Component {
 
@@ -9,6 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <LandingPage />
+        {/* <EmployeePage /> */}
         {/* <JobListing /> */}
 
       </div>

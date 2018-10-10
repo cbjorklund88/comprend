@@ -6,11 +6,10 @@ class EmployeePage extends React.Component {
 
   state = {
     employees: [],
-    employeesFiltered: []
+    employeesToLoad: 20
   }
 
   componentDidMount() {
-
     const url = "http://hellotechnigo.comprendwebsites.net/api/users"
 
     fetch(url)
@@ -21,14 +20,28 @@ class EmployeePage extends React.Component {
           employees: result
         })
       })
-
   }
+   handleClickLoadMore = () => {
+     this.setState({
+       employeesToLoad: this.state.employeesToLoad += 20
+     })
+   }
+   render() {
+    const placeholder = "/assets/images/placeholder.png"
+      this.state.employees.forEach(item => {
+      if (item.pictureUrl === "") {
+          item.pictureUrl = placeholder
+      }
+        if (item.name === "" || item.name === null || item.name.includes("@")) {
+        const itemIndex = this.state.employees.indexOf(item)
+        this.state.employees.splice(itemIndex, 1)
+      }
+    })
 
-  render() {
     return (
       <div className="wrapper">
         <div className="employee-page-container">
-          <div className="employee-page-intro">
+           <div className="employee-page-intro">
             <h1>Meet some of the people of Comprend</h1>
             <p>We&apos;re very proud of our people at Comprend —
       feel free to contact anyone for a lunch, or just want to ask a
@@ -36,7 +49,7 @@ class EmployeePage extends React.Component {
             </p>
           </div>
           <div className="employee-wrapper">
-            {this.state.employees.map(employee => (
+            {this.state.employees.slice(0, this.state.employeesToLoad).map(employee => (
               <div className="employee-container">
                 <EmployeeComponent
                   key={employee.id}
@@ -47,13 +60,12 @@ class EmployeePage extends React.Component {
             ))}
           </div>
           <div className="employee-button-container">
-          <button className="load-more-button">Load more lovely Comprenders</button>
+            <button className="load-more-button" onClick={this.handleClickLoadMore}>Load more lovely Comprenders</button>
           </div>
         </div>
-      </div>
-    )
-
-  }
+       </div>
+     )
+   }
 }
 
 
