@@ -14,9 +14,12 @@ class App extends React.Component {
       <Router>
         <div>
           <Header />
-          <LandingPage />
-          {/* <EmployeePage /> */}
-          {/* <JobListing /> */}
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/jobs" component={JobListing} />
+            <Route exact path="/jobs/:id" component={SingleJobPage} />
+            <Route exact path="/employees" component={EmployeePage} />
+          </Switch>
           <Footer />
         </div>
       </Router>

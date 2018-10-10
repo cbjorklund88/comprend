@@ -11,8 +11,8 @@ class SingleJob extends React.Component {
   }
 
   componentDidMount() {
-
-    const jobUrl = "http://hellotechnigo.comprendwebsites.net/api/jobs/47238"
+    const { id } = this.props.match.params
+    const jobUrl = `http://hellotechnigo.comprendwebsites.net/api/jobs/${id}`
 
     fetch(jobUrl)
       .then(response => {
