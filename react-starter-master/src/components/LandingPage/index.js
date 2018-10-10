@@ -87,8 +87,8 @@ class LandingPage extends React.Component {
             <button className="button-job-openings">Job openings</button>
           </div>
         </div>
-        <h2>Meet the people of Comprend</h2>
         <div className="landing-page-image-container">
+          <h2>Meet the people of Comprend</h2>
           {this.state.filteredEmployees.map(employee => (
             <div className="landing-page-image-container-portrait">
               <img src={employee.pictureUrl} alt="people of comprend" />

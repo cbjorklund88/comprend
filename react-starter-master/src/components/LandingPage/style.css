@@ -72,22 +72,29 @@
   padding: 40px;
 }
 
-.button-job-openings,
-.button-coworkers {
+.button-job-openings {
   background-color: var(--purple);
 }
 
 .landing-page-image-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 60px 0;
   width: 1000px;
 }
 
-.landing-page-image-container-portrait {
+.landing-page-image-container h2 {
+  padding-bottom: 20px;
+  width: 100%;
 }
 
 .landing-page-image-container-portrait img {
   border-radius: 50%;
+  width: 150px;
+}
+
+.button-coworkers {
+  background-color: var(--green);
+  margin-bottom: 50px;
 }
