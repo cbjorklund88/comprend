@@ -31,10 +31,6 @@ class SingleJob extends React.Component {
       }).then(employees => {
         const removeInvalidNames = employee => (!(employee.name === "" || employee.name === null || employee.name.includes("@")))
         const placeholder = "/assets/images/placeholder.png"
-        let randomStartIndex = Math.floor(Math.random() * (employees.length - 3))
-        if (randomStartIndex < 0) {
-          randomStartIndex = 0
-        }
 
         employees.forEach(employee => {
           if (employee.pictureUrl === "") {
@@ -44,7 +40,12 @@ class SingleJob extends React.Component {
 
         employees = employees
           .filter(removeInvalidNames)
-          .slice(randomStartIndex, randomStartIndex + 3)
+
+        let randomStartIndex = Math.floor(Math.random() * (employees.length - 3))
+        if (randomStartIndex < 0) {
+            randomStartIndex = 0
+        }
+        employees = employees.slice(randomStartIndex, randomStartIndex + 3)
 
         this.setState({
           employees,
