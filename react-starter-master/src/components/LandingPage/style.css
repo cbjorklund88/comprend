@@ -1,11 +1,19 @@
 .hero-container {
   position: relative;
 }
+.hero-container img {
+  object-fit: cover;
+  object-position: bottom;
+  height: 400px;
+}
+.hero-container h1 {
+  font-size: 70px;
+}
 
 .hero-info-container {
   position: absolute;
-  left: 100px;
-  top: 100px;
+  left: 390px;
+  top: 120px;
 }
 
 .job-suggestions-container {
@@ -52,5 +60,20 @@
 }
 
 .button-job-openings {
-  background-color: var(--blue);
+  background-color: var(--purple);
+}
+
+.landing-page-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  width: 1000px;
+}
+
+.landing-page-image-container-portrait {
+}
+
+.landing-page-image-container-portrait img {
+  border-radius: 50%;
 }
