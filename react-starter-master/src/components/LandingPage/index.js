@@ -4,7 +4,9 @@ import "./style.css"
 class LandingPage extends React.Component {
   state = {
     jobs: [],
-    filteredJobs: []
+    filteredJobs: [],
+    employees: [],
+    filteredEmployees: []
   }
 
   componentDidMount() {
@@ -25,12 +27,22 @@ class LandingPage extends React.Component {
         console.log(this.state.filteredJobs)
       })
 
-
       // Get Emplyees from employee-API
-      const employeeUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
-      // Fetch code for EMPLOYEES
-
-    }
+    const employeesUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
+    // Fetch code for EMPLOYEES
+    fetch(employeesUrl)
+      .then(response => {
+        return response.json()
+      })
+      .then(result => {
+        this.setState({
+          employees: result,
+          filteredEmployees: result.slice(0, 5)
+        })
+        console.log(this.state.employees)
+        console.log(this.state.filteredEmployees)
+      })
+  }
   render() {
     return (
       <div className="wrapper">
@@ -68,29 +80,23 @@ class LandingPage extends React.Component {
         </div>
 
         <div className="job-openings-container">
-          <img src="./assets/images/comprend-hero-1920x800.jpg" alt="comprend" />
+          <img src="./assets/images/office-fistbump.jpg" alt="comprend" />
           <div className="job-openings-info">
+            <div className="transparent-background-container" />
             <h2>We are looking for you</h2>
             <button className="button-job-openings">Job openings</button>
           </div>
         </div>
         <div className="landing-page-image-container">
-          <div className="landing-page-image-container-portrait">
-            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-          </div>
-          <div className="single-job-image-container-portrait">
-            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-          </div>
-          <div className="single-job-image-container-portrait">
-            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-          </div>
-          <div className="landing-page-image-container-portrait">
-            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-          </div>
-          <div className="single-job-image-container-portrait">
-            <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-          </div>
+          <h2>Meet the people of Comprend</h2>
+          {this.state.filteredEmployees.map(employee => (
+            <div className="landing-page-image-container-portrait">
+              <img src={employee.pictureUrl} alt="people of comprend" />
+              <p>{employee.name}</p>
+            </div>
+          ))}
         </div>
+        <button className="button-coworkers">More coworkers</button>
       </div>
     )
   }
