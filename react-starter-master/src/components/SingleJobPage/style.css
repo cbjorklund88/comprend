@@ -28,13 +28,17 @@ h2 {
   width: 700px;
 }
 
-.single-job-description-container {
-  display: flex;
+.single-job-description-container img {
+  float: left;
+  width: 50%;
+  height: auto;
+  margin-right: 20px;
 }
 
-.single-job-description-container-image,
-.single-job-description-container-text {
-  width: 50%;
+.single-job-description-container::after {
+  content:"";
+  display: table;
+  clear: both;
 }
 
 .single-job-description-container-text {
