@@ -30,6 +30,12 @@
   padding-right: 23px;
   top: 75px;
 }
+
+.soc-media-container i {
+  color: var(--pink);
+  margin-left: 15px;
+  margin-right: -5px;
+}
 .soc-media-container a {
   margin-left: 10px;
 }

@@ -22,9 +22,13 @@ render() {
         </div>
         <div className="footer-container-right">
           <div className="soc-media-container">
+            <i class="fab fa-facebook-square" />
             <a href="https://www.facebook.com/comprendcom/" rel="noopener noreferrer" target="_blank">Facebook</a>
+            <i class="fab fa-twitter-square" />
             <a href="https://twitter.com/ComprendCom" rel="noopener noreferrer" target="_blank">Twitter</a>
+            <i class="fab fa-instagram" />
             <a href="https://www.instagram.com/comprendlife/" rel="noopener noreferrer" target="_blank">Instagram</a>
+            <i class="fab fa-linkedin" />
             <a href="https://www.linkedin.com/company/comprend/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
           </div>
         </div>
