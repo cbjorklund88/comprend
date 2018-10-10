@@ -72,3 +72,9 @@
 option[value=""][disabled] {
   display: none;
 }
+
+@media (max-width: 1200px) {
+  .job-listing-info-container {
+    width: 100%;
+  }
+}
