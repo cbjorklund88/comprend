@@ -99,6 +99,11 @@
   width: 100%;
 }
 
+.landing-page-image-container p {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .landing-page-image-container-portrait img {
   border-radius: 50%;
   width: 150px;

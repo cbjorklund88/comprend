@@ -1,35 +1,60 @@
 import React from "react"
 import "./style.css"
+import EmployeeComponent from "../EmployeeComponent"
 
 class SingleJob extends React.Component {
 
   state = {
-    singleJob: {}
+    singleJob: {},
+    employees: [],
+    randomEmployeeIndex: 0
   }
 
-  // checkForQuotes = () => {
-  //   if (!this.state.singleJob.quote) {
-  //
-  //   }
-  // }
   componentDidMount() {
 
-    const url = "http://hellotechnigo.comprendwebsites.net/api/jobs/47238"
+    const jobUrl = "http://hellotechnigo.comprendwebsites.net/api/jobs/47238"
 
-    fetch(url)
+    fetch(jobUrl)
       .then(response => {
         return response.json()
       }).then(result => {
         this.setState({
           singleJob: result
         })
-        console.log(this.state.singleJob)
-        // checkForQuotes()
       })
 
-  }
-  render() {
+    const employeeUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
 
+    fetch(employeeUrl)
+      .then(response => {
+        return response.json()
+      }).then(employees => {
+        const removeInvalidNames = employee => (!(employee.name === "" || employee.name === null || employee.name.includes("@")))
+        const placeholder = "/assets/images/placeholder.png"
+        let randomStartIndex = Math.floor(Math.random() * (employees.length - 3))
+        if (randomStartIndex < 0) {
+          randomStartIndex = 0
+        }
+
+        employees.forEach(employee => {
+          if (employee.pictureUrl === "") {
+            employee.pictureUrl = placeholder
+          }
+        })
+
+        employees = employees
+          .filter(removeInvalidNames)
+          .slice(randomStartIndex, randomStartIndex + 3)
+
+        this.setState({
+          employees,
+          randomEmployeeIndex: Math.floor(Math.random() * (employees.length - 3))
+        })
+        console.log(this.state.randomEmployeeIndex)
+      })
+  }
+
+  render() {
     const {
       title,
       intro,
@@ -75,17 +100,16 @@ class SingleJob extends React.Component {
 
           <h2 className="center-text">Some of your colleagues</h2>
           <div className="single-job-image-container">
-            <div className="single-job-image-container-portrait">
-              <img src="./assets/images/AliciaMollbrink.webp" alt="" />
+          {this.state.employees.map(employee => (
+            <div className="colleague-container">
+              <EmployeeComponent
+                  key={employee.id}
+                  name={employee.name}
+                image={employee.pictureUrl} />
             </div>
-            <div className="single-job-image-container-portrait">
-              <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-            </div>
-            <div className="single-job-image-container-portrait">
-              <img src="./assets/images/AliciaMollbrink.webp" alt="" />
-            </div>
+          ))}
           </div>
-          <div className="single-job-navigation-container">
+            <div className="single-job-navigation-container">
             <div className="single-job-navigation-item left-text">
               <a href="#">&#8592; Previous Post</a>
             </div>

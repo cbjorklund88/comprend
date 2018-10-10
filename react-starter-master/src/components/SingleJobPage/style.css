@@ -59,14 +59,14 @@ h2 {
   margin: auto;
 }
 
-.single-job-image-container-portrait {
-  width: 30%;
-  height: auto;
+.colleague-container {
+  width: 33.33%;
 }
 
-.single-job-image-container-portrait img {
-  border-radius: 50%;
+.single-job-image-container .employee-info p {
+  font-size: 12px;
 }
+
 .single-job-navigation-container {
   display: flex;
   justify-content: space-between;
