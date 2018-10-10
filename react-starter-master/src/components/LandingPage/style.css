@@ -9,13 +9,11 @@
 .hero-container h1 {
   font-size: 70px;
 }
-
 .hero-info-container {
   position: absolute;
-  left: 390px;
-  top: 120px;
+  left: 400px;
+  top: 60px;
 }
-
 .job-suggestions-container {
   margin: 60px auto;
   width: 1000px;
@@ -38,14 +36,22 @@
 }
 
 .job-suggestions-container h3 {
-  font-size: 12px;
+  color: var(--purple);
+  margin: 3px 0;
+  font-size: 15px;
   font-weight: bold;
+  letter-spacing: 0.2px;
 }
 
 .job-suggestions-container p {
-  font-size: 12px;
-  margin-bottom: 0;
+  font-size: 16px;
+  margin-bottom: 2px;
 }
+
+.comprend-pitch-container {
+  margin-top: 40px;
+}
+
 
 .job-openings-container {
   position: relative;
