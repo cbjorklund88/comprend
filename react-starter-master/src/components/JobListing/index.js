@@ -68,7 +68,7 @@ class JobListing extends React.Component {
             <div className="job-listing-selector-container">
               <div className="icon-wrapper">
                 <select className="select-department" onChange={this.filterDepartment}>
-                  <option disabled selected>Department</option>
+                  <option disabled selected value="">Department</option>
                   <option value="all">All</option>
                   <option value="3502">Technology</option>
                   <option value="3503">Creative</option>
@@ -77,7 +77,7 @@ class JobListing extends React.Component {
               </div>
               <div className="icon-wrapper">
                 <select className="select-city" onChange={this.filterCity}>
-                  <option disabled selected>City</option>
+                  <option disabled selected value="">City</option>
                   <option value="all">All</option>
                   <option value="Stockholm">Stockholm</option>
                   <option value="London">London</option>

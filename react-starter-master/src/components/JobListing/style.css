@@ -43,6 +43,7 @@
   margin-top: 20px;
   width: 100%;
   border: 2px solid var(--green);
+  border-collapse: collapse;
 }
 .job-listing-table tr {
   padding: 10px;
@@ -66,4 +67,8 @@
   width: 20%;
   padding: 20px 30px 30px;
   border-bottom: 2px solid var(--green);
+}
+
+option[value=""][disabled] {
+  display: none;
 }
