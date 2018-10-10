@@ -102,14 +102,14 @@ class JobListing extends React.Component {
                     title={job.title}
                     department={job.department}
                     city={job.city}
-                  />
+                    id={job.id} />
                 ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
