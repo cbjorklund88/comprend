@@ -2,6 +2,7 @@ import React from "react"
 import "./style.css"
 
 class LandingPage extends React.Component {
+
   state = {
     jobs: [],
     filteredJobs: [],
@@ -10,7 +11,6 @@ class LandingPage extends React.Component {
   }
 
   componentDidMount() {
-
     // Get Jobs from jobs-API
     const JobsUrl = "http://hellotechnigo.comprendwebsites.net/api/jobs"
 
@@ -44,6 +44,15 @@ class LandingPage extends React.Component {
       })
   }
   render() {
+    const jobImages = [
+      <img src="./assets/images/job1.jpg" alt="office" />,
+      <img src="./assets/images/job2.jpg" alt="office" />,
+      <img src="./assets/images/job3.jpg" alt="office" />,
+      <img src="./assets/images/job4.jpg" alt="office" />,
+      <img src="./assets/images/job5.jpg" alt="office" />,
+      <img src="./assets/images/job6.jpg" alt="office" />
+    ]
+    
     return (
       <div className="wrapper">
         <div className="hero-container">
