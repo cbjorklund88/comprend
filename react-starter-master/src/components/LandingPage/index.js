@@ -80,9 +80,9 @@ class LandingPage extends React.Component {
         </div>
 
         <div className="job-openings-container">
-          <div className="transparent-background-container" />
           <img src="./assets/images/office-fistbump.jpg" alt="comprend" />
           <div className="job-openings-info">
+            <div className="transparent-background-container" />
             <h2>We are looking for you</h2>
             <button className="button-job-openings">Job openings</button>
           </div>
