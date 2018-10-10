@@ -11,6 +11,7 @@
 }
 .hero-info-container {
   position: absolute;
+  width: 400px;
   left: 400px;
   top: 60px;
 }
@@ -24,10 +25,6 @@
 
 .job-suggestion {
   width: 30%;
-}
-
-.job-suggestion-image {
-
 }
 
 .job-suggestions-container h2 {
@@ -51,7 +48,6 @@
 .comprend-pitch-container {
   margin-top: 40px;
 }
-
 
 .job-openings-container {
   position: relative;
@@ -112,4 +108,30 @@
 .button-coworkers {
   background-color: var(--green);
   margin-bottom: 0px;
+}
+
+@media (max-width: 1200px) {
+  .hero-container h1 {
+    font-size: 40px;
+  }
+  .hero-info-container {
+    position: absolute;
+    left: 90px;
+    top: 40px;
+  }
+  .hero-info-container p {
+    font-size: 14px;
+    width: 200px;
+  }
+  .job-suggestions-container {
+    width: 90%;
+  }
+  .landing-page-image-container {
+    width: 90%;
+  }
+  .landing-page-image-container-portrait:nth-child(5),
+  .landing-page-image-container-portrait:nth-child(6)
+  {
+    display: none;
+  }
 }

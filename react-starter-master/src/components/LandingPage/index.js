@@ -52,15 +52,15 @@ class LandingPage extends React.Component {
       <img src="./assets/images/job5.jpg" alt="office" />,
       <img src="./assets/images/job6.jpg" alt="office" />
     ]
-    
+
     return (
       <div className="wrapper">
         <div className="hero-container">
           <img src="./assets/images/hero-office-image.jpg" alt="comprend" />
           <div className="hero-info-container">
             <h1>Join us</h1>
-            <p>We are Comprend. If you’re curious, creative and<br />
-            passionate about digital communication – get in <br />
+            <p>We are Comprend. If you’re curious, creative and
+            passionate about digital communication – get in
             touch to explore our world!</p>
           </div>
         </div>
