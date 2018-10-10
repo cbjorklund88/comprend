@@ -24,7 +24,21 @@ class EmployeePage extends React.Component {
 
   }
 
+
+
   render() {
+    const placeholder = "/assets/images/placeholder.png"
+    this.state.employees.forEach(item => {
+      if (item.pictureUrl === "") {
+        item.pictureUrl = placeholder
+      }
+      if (item.name === "" || item.name === null || item.name.includes("@")) {
+        const itemIndex = this.state.employees.indexOf(item)
+        this.state.employees.splice(itemIndex, 1)
+      }
+    })
+
+
     return (
       <div className="wrapper">
         <div className="employee-page-container">
