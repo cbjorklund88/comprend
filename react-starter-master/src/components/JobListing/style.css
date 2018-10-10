@@ -67,3 +67,7 @@
   padding: 20px 30px 30px;
   border-bottom: 2px solid var(--green);
 }
+
+option[value=""][disabled] {
+  display: none;
+}
