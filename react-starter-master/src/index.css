@@ -29,6 +29,7 @@ button {
   letter-spacing: 0.2px;
   color: #FFF;
   outline: none;
+  cursor: pointer;
 }
 
 h1 {
