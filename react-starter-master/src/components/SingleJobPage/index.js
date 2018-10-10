@@ -11,13 +11,12 @@ class SingleJob extends React.Component {
   }
 
   componentDidMount() {
-    const { id } = this.props.match.params
-    const jobUrl = `http://hellotechnigo.comprendwebsites.net/api/jobs/${id}`
-
+    const pathUrl = this.props.match.params.id
+    const jobUrl = `http://hellotechnigo.comprendwebsites.net/api/jobs/${pathUrl}`
+    console.log(this.props.match.params.id)
     fetch(jobUrl)
-      .then(response => {
-        return response.json()
-      }).then(jobs => {
+      .then(response => response.json())
+      .then(jobs => {
         this.setState({
           singleJob: jobs
         })
@@ -62,16 +61,26 @@ class SingleJob extends React.Component {
       workday,
       aboutYou,
       match,
-      city
+      city,
+      id
     } = this.state.singleJob
 
+    const jobImages = [
+      "./assets/images/job1.jpg",
+      "./assets/images/job2.jpg",
+      "./assets/images/job3.jpg",
+      "./assets/images/job4.jpg",
+      "./assets/images/job5.jpg",
+      "./assets/images/job6.jpg"
+    ]
+    console.log(jobImages)
     return (
       <div className="wrapper">
         <div className="single-job-container">
           <a href="#">&#8592; Back to List</a>
           <h1>{title}</h1>
           <p className="preamble"><span>{city}. </span>{intro}</p>
-          <img src="./assets/images/job-image.webp" alt="" />
+          <img src={`/assets/images/${id}.jpg`} alt="" />
           <div className="single-job-button-container">
             <button className="button-apply">Apply for the job</button>
             <button className="button-share">Share the job</button>
