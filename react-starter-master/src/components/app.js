@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import SingleJobPage from "./SingleJobPage"
 import JobListing from "./JobListing"
 import LandingPage from "./LandingPage"
@@ -10,6 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <Router>
       <div>
         <Header />
         <LandingPage />
@@ -17,6 +19,7 @@ class App extends React.Component {
         {/* <JobListing /> */}
         <Footer />
       </div>
+      </router>
     )
   }
 
