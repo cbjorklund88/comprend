@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./style.css"
 
 class Header extends React.Component {
@@ -9,7 +10,9 @@ class Header extends React.Component {
         <div className="header-container">
           <div className="header-container-left">
             <div className="header-logo">
-              <img src="./../assets/comprend-logo-transparent.png" alt="Comprend logo" />
+              <Link to="/">
+                <img src="./../assets/comprend-logo-transparent.png" alt="Comprend logo" />
+              </Link>
             </div>
           </div>
           <div className="header-container-right">
