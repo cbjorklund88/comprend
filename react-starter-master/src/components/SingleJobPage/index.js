@@ -80,13 +80,9 @@ class SingleJob extends React.Component {
           <p>{workday}</p>
           {quote && <blockquote>{quote}</blockquote>}
           <div className="single-job-description-container">
-            <div className="single-job-description-container-image">
-              <img src="./assets/images/job-image.webp" alt="" />
-            </div>
-            <div className="single-job-description-container-text">
-              <h2>Who are you?</h2>
-              <p>{aboutYou}</p>
-            </div>
+            <img src="./assets/images/job-image.webp" alt="" />
+            <h2>Who are you?</h2>
+            <p>{aboutYou}</p>
           </div>
           <h2>Is Comprend the company for you?</h2>
           <p>{match}</p>

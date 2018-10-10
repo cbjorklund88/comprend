@@ -46,7 +46,6 @@
 }
 .job-listing-table tr {
   padding: 10px;
-  /* background-color: var(--green); */
 }
 .job-listing-table tr:nth-child(2n) {
   background-color: hsl(166, 50%, 93%);
