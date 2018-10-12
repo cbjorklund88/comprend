@@ -45,16 +45,16 @@ class SingleJob extends React.Component {
             })
           }
         })
-        const nextJobIndex = this.state.jobIndex + 1
-        const nextJobId = this.state.jobList[nextJobIndex].id
-        this.setState({
-          nextJob: nextJobId
-        })
-        const previousJobIndex = this.state.jobIndex - 1
-        const previousJobId = this.state.jobList[previousJobIndex].id
-        this.setState({
-          previousJob: previousJobId
-        })
+        // const nextJobIndex = this.state.jobIndex + 1
+        // const nextJobId = this.state.jobList[nextJobIndex].id
+        // this.setState({
+        //   nextJob: nextJobId
+        // })
+        // const previousJobIndex = this.state.jobIndex - 1
+        // const previousJobId = this.state.jobList[previousJobIndex].id
+        // this.setState({
+        //   previousJob: previousJobId
+        // })
       })
 
     const employeeUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
