@@ -7,27 +7,61 @@ class SingleJob extends React.Component {
 
   state = {
     singleJob: {},
+    jobList: [],
     employees: [],
-    randomEmployeeIndex: 0
+    randomEmployeeIndex: 0,
+    jobIndex: "",
+    nextJob: "",
+    previousJob: ""
   }
 
-  componentDidMount() {
+  getJobInfo = () => {
+    window.scrollTo(0, 0)
+
     const pathUrl = this.props.match.params.id
+
     const jobUrl = `http://hellotechnigo.comprendwebsites.net/api/jobs/${pathUrl}`
+
     fetch(jobUrl)
+      .then(response => response.json())
+      .then(job => {
+        this.setState({
+          singleJob: job
+        })
+      })
+
+    const jobsUrl = "http://hellotechnigo.comprendwebsites.net/api/jobs"
+
+    fetch(jobsUrl)
       .then(response => response.json())
       .then(jobs => {
         this.setState({
-          singleJob: jobs
+          jobList: jobs
+        })
+        this.state.jobList.forEach(item => {
+          if (item.id === pathUrl) {
+            this.setState({
+              jobIndex: this.state.jobList.indexOf(item)
+            })
+          }
+        })
+        const nextJobIndex = this.state.jobIndex + 1
+        const nextJobId = this.state.jobList[nextJobIndex].id
+        this.setState({
+          nextJob: nextJobId
+        })
+        const previousJobIndex = this.state.jobIndex - 1
+        const previousJobId = this.state.jobList[previousJobIndex].id
+        this.setState({
+          previousJob: previousJobId
         })
       })
 
     const employeeUrl = "http://hellotechnigo.comprendwebsites.net/api/users"
 
     fetch(employeeUrl)
-      .then(response => {
-        return response.json()
-      }).then(employees => {
+      .then(response => response.json())
+      .then(employees => {
         const removeInvalidNames = employee => (!(employee.name === "" || employee.name === null || employee.name.includes("@")))
         const placeholder = "/assets/images/placeholder.png"
 
@@ -53,7 +87,13 @@ class SingleJob extends React.Component {
       })
   }
 
+  componentDidMount() {
+    this.getJobInfo()
+  }
+
   render() {
+    console.log(this.state.jobIndex)
+
     const {
       title,
       intro,
@@ -64,7 +104,9 @@ class SingleJob extends React.Component {
       city,
       id
     } = this.state.singleJob
-    
+
+    const { nextJob, previousJob } = this.state
+
     return (
       <div className="wrapper">
         <div className="single-job-container">
@@ -107,13 +149,13 @@ class SingleJob extends React.Component {
           </div>
             <div className="single-job-navigation-container">
             <div className="single-job-navigation-item left-text">
-              <a href="#">&#8592; Previous Post</a>
+              <Link to={`/jobs/${previousJob}`} onClick={this.getJobInfo}>&#8592; Previous Post</Link>
             </div>
             <div className="single-job-navigation-item">
               <a href="#">Back to List</a>
             </div>
             <div className="single-job-navigation-item right-text">
-              <a href="#">Next Post &#8594;</a>
+              <Link to={`/jobs/${nextJob}`} onClick={this.getJobInfo}>Next Post &#8594;</Link>
             </div>
           </div>
         </div>

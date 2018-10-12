@@ -1,6 +1,6 @@
-import React from "react";
-import JobListingItem from "../JobListingItem";
-import "./style.css";
+import React from "react"
+import JobListingItem from "../JobListingItem"
+import "./style.css"
 
 class JobListing extends React.Component {
   state = {
@@ -9,6 +9,8 @@ class JobListing extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0)
+    
     const url = "http://hellotechnigo.comprendwebsites.net/api/jobs"
 
     fetch(url)
@@ -20,8 +22,6 @@ class JobListing extends React.Component {
           jobs: result,
           filteredJobs: result
         })
-        console.log(this.state.jobs)
-        console.log(this.state.filteredJobs)
       })
   }
 
