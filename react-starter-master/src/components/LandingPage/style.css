@@ -1,5 +1,6 @@
 .hero-container {
   position: relative;
+  width: 100%;
 }
 .hero-container img {
   object-fit: cover;
@@ -59,6 +60,7 @@
 
 .job-openings-container {
   position: relative;
+  width: 100%;
 }
 .job-openings-container img {
   object-fit: cover;
