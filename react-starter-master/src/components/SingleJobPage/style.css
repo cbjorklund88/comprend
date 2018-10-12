@@ -82,3 +82,9 @@ h2 {
   width: 30%;
   text-align: center;
 }
+
+@media (max-width: 1200px) {
+  .single-job-container{
+    width: 90%;
+  }
+}

@@ -23,6 +23,9 @@ class Header extends React.Component {
             <a href="#">Join us</a>
             <a href="#">Contact</a>
           </div>
+          <div className="header-container-right-mobile">
+            <i className="fas fa-bars" />
+          </div>
         </div>
       </div>
     )
