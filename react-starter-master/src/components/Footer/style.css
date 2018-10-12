@@ -13,7 +13,6 @@
   padding-top: 10px;
   font-size: 14px;
 }
-
 .footer-logo-container {
   width: 200px;
   margin-bottom: 10px;
@@ -38,4 +37,21 @@
 }
 .soc-media-container a {
   margin-left: 10px;
+}
+
+@media (max-width: 1200px) {
+  .footer-link-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-link-container a {
+    margin-bottom: 5px;
+  }
+  .soc-media-container a {
+    display: none;
+    width:
+  }
+  .soc-media-container i {
+  font-size: 25px;
+  }
 }

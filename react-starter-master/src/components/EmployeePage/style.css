@@ -25,3 +25,12 @@
   background-color: var(--pink);
   width: 260px;
 }
+
+@media (max-width: 1200px) {
+  .employee-page-container {
+    width: 90%;
+  }
+  .employee-container {
+    width: 33.33%;
+  }
+}

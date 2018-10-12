@@ -12,7 +12,7 @@ class Footer extends React.Component {
               <img src="./../assets/comprend-logo-transparent.png" alt="Comprend logo" />
             </div>
             <div className="footer-link-container">
-              <a href="#">@ 2014-2018 Comprend</a>
+              <a href="#">© 2014-2018 Comprend</a>
               <a href="#">Privacy notice</a>
               <a href="#">Cookie policy</a>
               <a href="#">Terms of use</a>

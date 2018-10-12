@@ -33,3 +33,20 @@ i {
   justify-content: space-between;
   width: 40%;
 }
+.header-container-right-mobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .header-container-right {
+    display: none;
+  }
+  .header-container-right-mobile {
+    display: block;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    font-size: 25px;
+    color: #272727;
+  }
+}
